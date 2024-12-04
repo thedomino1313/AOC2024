@@ -20,4 +20,4 @@ def search(text, posx, posy):
     return set((text[posx-1][posy-1], text[posx+1][posy+1])) == set(("M","S")) == set((text[posx+1][posy-1], text[posx-1][posy+1]))
 
 with open(FILENAME, 'r') as f:
-    print(sum(search(text, i, j) for i in range(len(text[1:])) for j in range(1, len(text[0]) - 1) if text[i][j] == "A"))
+    print(sum(search(text, i, j) for i in range(1, len(text[1:])) for j in range(1, len(text[0][1:])) if text[i][j] == "A"))
