@@ -9,7 +9,7 @@ def search(text, posx, posy, dir_=(), letter = 0):
     if letter == 4: return 1
     if 0 > posx or posx >= len(text) or 0 > posy or posy >= len(text[0]): return 0
     if not dir_:
-        return sum([search(text, posx+i, posy+j, (i,j), 1) for i in [-1, 0, 1] for j in [-1, 0, 1] if (i,j) != (0,0)])
+        return sum([search(text, posx+i, posy+j, (i,j), 1) for i in [-1, 0, 1] for j in [-1, 0, 1] if i or j])
     if text[posx][posy] == string[letter]:
             return search(text, posx+dir_[0], posy+dir_[1], dir_, letter+1)
     return 0
