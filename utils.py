@@ -1,4 +1,5 @@
 from functools import *
+from itertools import *
 from collections import Counter
 import regex as re, math
 import sys
