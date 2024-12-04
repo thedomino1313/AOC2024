@@ -2,7 +2,7 @@ from utils import *
 
 ## part 1
 with open(FILENAME, "r") as f:
-    print(sum([int(x.group(1)) * int(x.group(2)) for x in re.compile(r"mul\(([0-9]*),([0-9]*)\)").finditer(f.read())]))
+    print(sum([int(x.group(1)) * int(x.group(2)) for x in re.compile(r"mul\(([0-9]*),([0-9]*)\)", re.S).finditer(f.read())]))
 
 ## part 2
 with open(FILENAME, "r") as f:
