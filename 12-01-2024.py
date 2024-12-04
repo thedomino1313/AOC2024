@@ -1,12 +1,11 @@
-from functools import *
-from collections import Counter
+from utils import *
 
 ## part 1
-with open("input1201.txt", "r") as f:
+with open(FILENAME, "r") as f:
     print(sum(map(lambda x: abs(x[0]-x[1]), zip(*map(sorted, zip(*(map(int, x.split()) for x in f)))))))
 
 #part 2
-with open("input1201.txt", "r") as f:
+with open(FILENAME, "r") as f:
     input = list(zip(*[map(int, x.split()) for x in f]))
 
 c = Counter(input[1])
