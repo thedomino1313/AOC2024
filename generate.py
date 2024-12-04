@@ -2,16 +2,13 @@ from sys import argv as a
 from datetime import date
 import os.path as p
 
-if len(a) != 3:
-    m = date.today().month
+if len(a) != 2:
     d = date.today().day
-    codefile = f"{m:02d}-{d:02d}-2024.py"
-    inputfile = f"inputs/{m:02d}{d:02d}.txt"
 else:
-    m = int(a[1])
-    d = int(a[2])
-    codefile = f"{m:02d}-{d:02d}-2024.py"
-    inputfile = f"inputs/{m:02d}{d:02d}.txt"
+    d = int(a[1])
+
+codefile = f"12-{d:02d}-2024.py"
+inputfile = f"inputs/12{d:02d}.txt"
 
 if not p.exists(codefile):
     with open(codefile, "w") as f:
