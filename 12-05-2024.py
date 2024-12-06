@@ -18,7 +18,7 @@ for instruction in wrong:
 	for i in range(len(instruction)):
 		for j in range(i+1, len(instruction)):
 			if instruction[j] in rules[instruction[i]]:
-				instruction = instruction[:i] + [instruction[j]] + instruction[i+1:j] + [instruction[i]] + instruction[j+1:]
+				instruction[i],instruction[j]=instruction[j],instruction[i]
 	total += int(instruction[(len(instruction)-1)//2])
 
 print(total)
