@@ -35,23 +35,22 @@ print(len(spaces))
 # part 2
 spots = set()
 directions = [(-1,0),(0,1),(1,0),(0,-1)]
-for x in range(len(map_)):
-	for y in range(len(map_[0])):
-		if map_[x][y] != "#":
-			visited = set()
-			dirIndex = 0
-			i,j = initi,initj
-			map_[x][y] = "#"
-			while i not in (0,len(map_)-1) and j not in (0,len(map_[0])-1):
-				direction = directions[dirIndex]
-				if (i,j,dirIndex) in visited:
-					spots.add((x,y))
-					break
-				if map_[(newi := i+direction[0])][(newj := j+direction[1])] == "#":
-					dirIndex = (dirIndex+1)%4
-				else:
-					visited.add((i,j,dirIndex))
-					i,j = newi,newj
-			map_[x][y] = "."
+for x,y in spaces:
+	if map_[x][y] != "#":
+		visited = set()
+		dirIndex = 0
+		i,j = initi,initj
+		map_[x][y] = "#"
+		while i not in (0,len(map_)-1) and j not in (0,len(map_[0])-1):
+			direction = directions[dirIndex]
+			if (i,j,dirIndex) in visited:
+				spots.add((x,y))
+				break
+			if map_[(newi := i+direction[0])][(newj := j+direction[1])] == "#":
+				dirIndex = (dirIndex+1)%4
+			else:
+				visited.add((i,j,dirIndex))
+				i,j = newi,newj
+		map_[x][y] = "."
 
 print(len(spots))
