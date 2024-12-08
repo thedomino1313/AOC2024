@@ -10,4 +10,4 @@ print(len(set((new1, new2) for s in symbols for loc1 in symbols[s] for loc2 in s
 
 
 ## part 2
-print(len(set((new1, new2) for s in symbols for loc1 in symbols[s] for loc2 in symbols[s] if loc1 != loc2 for slope1,slope2 in [(loc2[0]-loc1[0], loc2[1]-loc1[1])] for new1,new2 in zip((range(loc1[0], len(antennas), slope1) if slope1 > 0 else range(loc1[0], -1,slope1)), (range(loc1[1], len(antennas[0]), slope2) if slope2 > 0 else range(loc1[1], -1, slope2))))))
+print(len(set((new1, new2) for s in symbols for loc1 in symbols[s] for loc2 in symbols[s] if loc1 != loc2 for slope1,slope2 in [(loc2[0]-loc1[0], loc2[1]-loc1[1])] for new1,new2 in zip((range(loc1[0], len(antennas), slope1) if slope1 > 0 else range(loc1[0], -1, slope1)), (range(loc1[1], len(antennas[0]), slope2) if slope2 > 0 else range(loc1[1], -1, slope2))))))
