@@ -1,7 +1,7 @@
 from utils import *
 
 ## part 1
-with open("inputs/1206.txt", 'r') as f:
+with open(FILENAME, 'r') as f:
 	map_ = f.read().split("\n")
 
 initi = 0
