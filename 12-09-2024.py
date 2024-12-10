@@ -1,7 +1,7 @@
 from utils import *
 
 ## part 1
-with open("inputs/1209.txt", 'r') as f:
+with open(FILENAME, 'r') as f:
 	line = list(f.read().strip())
 rep = []
 for i in range(0, len(line), 2):
